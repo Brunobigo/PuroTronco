@@ -1,0 +1,16 @@
+# Arquivos de sistema (Windows e macOS)
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Pastas de configuração de editores (como VS Code)
+.vscode/
+.idea/
+
+# Arquivos de log e cache temporários
+*.log
+.cache/
+
+# Caso decida usar Node.js no futuro para minificar CSS ou algo similar
+node_modules/
+npm-debug.log
