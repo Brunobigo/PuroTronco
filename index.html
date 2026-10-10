@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puro Tronco | Em Construção</title>
+    <!-- Importando fonte do Google para um visual mais moderno -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cor-madeira: #8b5a2b;
+            --cor-madeira-escura: #5c3a1a;
+            --cor-fundo: #fdfaf6;
+            --cor-texto: #2b2b2b;
+            --cor-texto-claro: #666666;
+            --cor-whatsapp: #25D366;
+            --cor-whatsapp-hover: #128C7E;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            background-image: radial-gradient(#e5d9c5 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 90%;
+            background: #ffffff;
+            padding: 50px 30px;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(139, 90, 43, 0.08);
+            border-top: 8px solid var(--cor-madeira);
+        }
+
+        .logo-container {
+            margin-bottom: 30px;
+        }
+
+        .logo-container img {
+            width: 160px;
+            height: 160px;
+            object-fit: contain;
+            border-radius: 50%;
+            border: 3px dashed var(--cor-madeira);
+            padding: 5px;
+            background-color: #fff;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: var(--cor-madeira-escura);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: var(--cor-texto-claro);
+            margin-bottom: 25px;
+        }
+
+        .destaque {
+            font-weight: 600;
+            color: var(--cor-madeira);
+        }
+
+        .botoes {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+            align-items: center;
+        }
+
+        @media (min-width: 480px) {
+            .botoes {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 250px;
+        }
+
+        .btn-whatsapp {
+            background-color: var(--cor-whatsapp);
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: var(--cor-whatsapp-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-instagram {
+            background-color: transparent;
+            color: var(--cor-madeira-escura);
+            border: 2px solid var(--cor-madeira-escura);
+        }
+
+        .btn-instagram:hover {
+            background-color: var(--cor-madeira-escura);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 0.85rem;
+            color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        /* Animação simples de pulso no título para chamar atenção */
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        .aviso {
+            display: inline-block;
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="logo-container">
+            <!-- A imagem PuroTronco.jpg precisa estar na mesma pasta deste arquivo index.html -->
+            <img src="PuroTronco.jpg" alt="Logo Puro Tronco">
+        </div>
+
+        <div class="aviso">🚧 Site em Reestruturação</div>
+        
+        <h1>Estamos Crescendo!</h1>
+        
+        <p>A <span class="destaque">Puro Tronco</span> está preparando um novo espaço digital para você. Em breve, um site completo com nosso catálogo e loja virtual.</p>
+        
+        <p>A produção não para! Continue acompanhando nosso trabalho e faça seus pedidos ou orçamentos diretamente pelos nossos canais de atendimento:</p>
+
+        <div class="botoes">
+            <a href="https://wa.me/5551981730137" target="_blank" class="btn btn-whatsapp">
+                Fazer Pedido no WhatsApp
+            </a>
+            <a href="https://instagram.com/purotroncomarcenaria" target="_blank" class="btn btn-instagram">
+                Visitar Instagram
+            </a>
+        </div>
+
+        <div class="footer">
+            &copy; 2026 Puro Tronco - Arte em Madeira.<br>Cachoeirinha, RS
+        </div>
+
+    </div>
+
+</body>
+</html>
