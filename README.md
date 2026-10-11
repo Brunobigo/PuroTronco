@@ -9,12 +9,6 @@ Não é necessária nenhuma instalação complexa. Para ver o site no seu comput
 2. Certifique-se de que a imagem `PuroTronco.jpg` está na mesma pasta do arquivo `index.html`.
 3. Dê um duplo clique no arquivo `index.html` para abri-lo no seu navegador (Chrome, Edge, Firefox, etc.).
 
-## 🌐 Como atualizar o site online
-Este projeto utiliza o GitHub Pages. Para publicar qualquer alteração:
-1. Edite o arquivo `index.html` (usando VS Code, Bloco de Notas, etc.).
-2. Faça o `commit` e o `push` para a branch principal (`main` ou `master`).
-3. O GitHub atualizará a página online automaticamente em poucos minutos.
-
 ## 📁 Estrutura de Arquivos
 - `index.html`: Arquivo principal contendo a estrutura e o estilo (CSS) da página.
 - `PuroTronco.jpg`: Logotipo utilizado na página (deve ser inserido manualmente na pasta).
@@ -22,6 +16,7 @@ Este projeto utiliza o GitHub Pages. Para publicar qualquer alteração:
 - `README.md`: Este arquivo de documentação.
 
 ## 📞 Contatos da Puro Tronco
-- **WhatsApp:** (51) 98173-0137
+- **WhatsApp:** [(51) 98173-0137](https://wa.me/5551981730137)
 - **Instagram:** [@purotroncomarcenaria](https://instagram.com/purotroncomarcenaria)
-- **Localização:** Cachoeirinha, RS
+- **Site:** [purotronco.com.br](https://www.purotronco.com.br)
+- **Localização:** [Cachoeirinha, RS](https://share.google/abxJ5a8Xe9vehkQId)
