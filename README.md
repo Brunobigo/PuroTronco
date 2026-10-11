@@ -6,7 +6,7 @@ O site foi construído em HTML5 e CSS3 e está configurado para ser hospedado gr
 ## 🚀 Como visualizar localmente
 Não é necessária nenhuma instalação complexa. Para ver o site no seu computador:
 1. Faça o clone ou baixe este repositório.
-2. Se Certifique de que a imagem `PuroTronco.jpg` está na mesma pasta do arquivo `index.html`.
+2. Se certifique de que a imagem `PuroTronco.jpg` está na mesma pasta do arquivo `index.html`.
 3. Dê um duplo clique no arquivo `index.html` para abri-lo no seu navegador (Chrome, Edge, Firefox, etc.).
 
 ## 📁 Estrutura de Arquivos
