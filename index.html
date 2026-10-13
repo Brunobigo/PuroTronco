@@ -1,194 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Puro Tronco | Em Construção</title>
-    <!-- Importando fonte do Google para um visual mais moderno -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --cor-madeira: #8b5a2b;
-            --cor-madeira-escura: #5c3a1a;
-            --cor-fundo: #fdfaf6;
-            --cor-texto: #2b2b2b;
-            --cor-texto-claro: #666666;
-            --cor-whatsapp: #25D366;
-            --cor-whatsapp-hover: #128C7E;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--cor-fundo);
-            color: var(--cor-texto);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            text-align: center;
-            background-image: radial-gradient(#e5d9c5 1px, transparent 1px);
-            background-size: 20px 20px;
-        }
-
-        .container {
-            max-width: 600px;
-            width: 90%;
-            background: #ffffff;
-            padding: 50px 30px;
-            border-radius: 16px;
-            box-shadow: 0 20px 40px rgba(139, 90, 43, 0.08);
-            border-top: 8px solid var(--cor-madeira);
-        }
-
-        .logo-container {
-            margin-bottom: 30px;
-        }
-
-        .logo-container img {
-            width: 160px;
-            height: 160px;
-            object-fit: contain;
-            border-radius: 50%;
-            border: 3px dashed var(--cor-madeira);
-            padding: 5px;
-            background-color: #fff;
-        }
-
-        h1 {
-            font-size: 2.2rem;
-            color: var(--cor-madeira-escura);
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        p {
-            font-size: 1.05rem;
-            line-height: 1.6;
-            color: var(--cor-texto-claro);
-            margin-bottom: 25px;
-        }
-
-        .destaque {
-            font-weight: 600;
-            color: var(--cor-madeira);
-        }
-
-        .botoes {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 30px;
-            align-items: center;
-        }
-
-        @media (min-width: 480px) {
-            .botoes {
-                flex-direction: row;
-                justify-content: center;
-            }
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 14px 28px;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            width: 100%;
-            max-width: 250px;
-        }
-
-        .btn-whatsapp {
-            background-color: var(--cor-whatsapp);
-            color: white;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-        }
-
-        .btn-whatsapp:hover {
-            background-color: var(--cor-whatsapp-hover);
-            transform: translateY(-2px);
-        }
-
-        .btn-instagram {
-            background-color: transparent;
-            color: var(--cor-madeira-escura);
-            border: 2px solid var(--cor-madeira-escura);
-        }
-
-        .btn-instagram:hover {
-            background-color: var(--cor-madeira-escura);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .footer {
-            margin-top: 40px;
-            font-size: 0.85rem;
-            color: #999;
-            border-top: 1px solid #eee;
-            padding-top: 20px;
-        }
-
-        /* Animação simples de pulso no título para chamar atenção */
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.7; }
-            100% { opacity: 1; }
-        }
-        .aviso {
-            display: inline-block;
-            background-color: #fff3cd;
-            color: #856404;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            animation: pulse 2s infinite;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        
-        <div class="logo-container">
-            <!-- A imagem PuroTronco.jpg precisa estar na mesma pasta deste arquivo index.html -->
-            <img src="PuroTronco.jpg" alt="Logo Puro Tronco">
-        </div>
-
-        <div class="aviso">🚧 Site em Reestruturação</div>
-        
-        <h1>Estamos Crescendo!</h1>
-        
-        <p>A <span class="destaque">Puro Tronco</span> está preparando um novo espaço digital para você. Em breve, um site completo com nosso catálogo e loja virtual.</p>
-        
-        <p>A produção não para! Continue acompanhando nosso trabalho e faça seus pedidos ou orçamentos diretamente pelos nossos canais de atendimento:</p>
-
-        <div class="botoes">
-            <a href="https://wa.me/5551981730137" target="_blank" class="btn btn-whatsapp">
-                Fazer Pedido no WhatsApp
-            </a>
-            <a href="https://instagram.com/purotroncomarcenaria" target="_blank" class="btn btn-instagram">
-                Visitar Instagram
-            </a>
-        </div>
-
-        <div class="footer">
-            &copy; 2026 Puro Tronco - Arte em Madeira.<br>Cachoeirinha, RS
-        </div>
-
-    </div>
-
-</body>
+  <head>
+    <title>Puro Tronco | Marcenaria e Oficina CNC</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="index,follow"/>
+  <meta name="generator" content="GrapesJS Studio"/>
+  <meta property="og:title" content="Puro Tronco"/>
+  <meta property="og:image" content="https://cdn.grapesjs.com/workspaces/cmv3xjwq2gkziysykf6nbz68i/assets/e3c17f3c-1700-43fb-97b4-3190e5bad892__logopurotronco.svg"/>
+  <link rel="icon" href="https://cdn.grapesjs.com/workspaces/cmv3xjwq2gkziysykf6nbz68i/assets/e3c17f3c-1700-43fb-97b4-3190e5bad892__logopurotronco.svg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="./style.css">
+  </head>
+  <body class="gjs-t-body"><div id="i6gxg" class="page-wrapper"><header class="header"><div id="i53lw" class="header-container"><a href="#i66k" id="i2ydk" class="gjs-t-link logo-link"><img src="https://cdn.grapesjs.com/workspaces/cmv3xjwq2gkziysykf6nbz68i/assets/37dc0e16-776a-4a43-b00d-7470c698a4c1__logopurotroncohorizontal.svg" alt="Puro Tronco Arte em Madeira" id="i4e3no"/></a><nav id="iq2fl" class="navigation"><a href="#itxwg-2" id="i0qpu" class="gjs-t-link navigation-link">Sobre</a><a href="#is0qw-2" id="ifhf7" class="gjs-t-link navigation-link">PORTFÓLIO</a><a href="#i26k76-2" id="iytnl" class="gjs-t-link navigation-link">Contato</a><a href="#i1x908" id="iytnl-2" class="gjs-t-link navigation-link">Redes Sociais</a></nav></div></header><main id="ic3qk"><section id="i2985-2" class="hero-section"><div id="iernk-2" class="hero-background-texture"><img src="https://cdn.grapesjs.com/workspaces/cmv3xjwq2gkziysykf6nbz68i/assets/3d3bdd34-5d79-4f72-9669-e579b6c36042__geminigeneratedimages5fmcys5fmcys5fm.jpg" alt="Textura de madeira escura" id="ik9w5-2" class="hero-background-image"/></div><div id="ipwnp-2" class="hero-overlay"></div><div id="igy35-2" class="hero-container"><div id="il032-2" class="hero-badge">
+              Puro Tronco • Cachoeirinha, RS
+            </div><div id="iquu8-2" class="hero-content"><h1 id="inhtd-2" class="gjs-t-h1 hero-title">
+                Arte em Madeira e Usinagem CNC
+              </h1><p id="i5qlx-2" class="hero-subtitle"><font dir="auto" id="il0q0t-2"><font dir="auto" id="iudsw5-2">Peças rústicas, artigos gaúchos e projetos sob medida e personalizados</font></font></p><div id="ixfc6-2" class="hero-actions"><a href="https://wa.me/5551981730137" target="_blank" id="i2gqy-2" class="gjs-t-button primary-cta-button"><img src="https://api.iconify.design/ic-baseline-whatsapp.svg?color=%23ffffff" alt="Ícone do WhatsApp" id="ii7p8-2-2" class="button-icon"/><span id="ick63-2">Faça um Orçamento no WhatsApp</span></a></div></div></div></section><section id="sobre-2" class="about-section"><div id="itxwg-2" class="about-container"><div id="ijuqm-2" class="about-text-column"><div data-type-role="flex-row" id="iod0lt" class="gjs-plg-flex-row"><div data-type-role="flex-column" id="ib9k4p" class="gjs-plg-flex-column"><div id="i0jwy-2" class="section-label">
+                Sobre Nós
+              </div></div></div><h2 id="i3imv-2" class="gjs-t-h2 about-title">
+                Tradição familiar com precisão contemporânea
+              </h2><p id="i6tj7-2" class="about-description">
+                Fundada em 2023, a Puro Tronco é uma marcenaria familiar localizada em Cachoeirinha, RS. Unimos a marcenaria tradicional com a precisão da usinagem em Router CNC para criar peças exclusivas, robustas e de alta qualidade.
+              </p><div id="ikjfi-2" class="about-highlights"><div id="in84h-2" class="gjs-t-border highlight-card"><div id="ikock-2" class="highlight-header"><img src="https://api.iconify.design/lucide-hammer.svg?color=%238a6546" alt="Ícone marcenaria" id="iq97g-2" class="highlight-icon"/><span id="imklg-2" class="highlight-title">Marcenaria</span></div><p id="i9gbq-2" class="highlight-text"><font dir="auto" id="i256fq-2"><font dir="auto" id="iq1q9v-2">Acabamento com cuidado, presença artesanal e personalidade em cada peça.</font></font></p></div><div id="ictwp-2" class="gjs-t-border highlight-card"><div id="i3etc-2" class="highlight-header"><img src="https://api.iconify.design/lucide-scan-line.svg?color=%238a6546" alt="Ícone CNC" id="idnmc-2" class="highlight-icon"/><span id="ith3x-2" class="highlight-title">Router CNC</span></div><p id="igh8e-2" class="highlight-text">Precisão para projetos sob medida, cortes técnicos e detalhes diferenciados.</p></div></div></div><div id="ikgri-2" class="about-image-column"><div id="ixzhc-2" class="gjs-t-border image-frame"><img src="https://cdn.grapesjs.com/workspaces/cmv3xjwq2gkziysykf6nbz68i/assets/ddb8308c-4a14-4780-bf19-eef5dbd9a258__geminigeneratedimageanimgzanimgzanim.jpg" alt="Oficina de marcenaria e usinagem CNC" id="ixxdm-2" class="about-image"/></div><div id="i6bcg-2" class="image-accent-card"><div id="iyad2-2" class="accent-header"><img src="https://api.iconify.design/lucide-map-pinned.svg?color=%232f241c" alt="Ícone localização" id="i9m7l-2" class="accent-icon"/><span id="i2a0u-2" class="accent-title">Atendimento local</span></div><p id="ixmto-2" class="accent-text">Projetos desenvolvidos com identidade rústica e acabamento premium para clientes de Cachoeirinha e região.</p></div></div></div></section><section id="galeria-2" class="gallery-section"><div id="is0qw-2" class="gallery-container"><div id="i1bap-2" class="gallery-header"><div id="ib8ni-2" class="section-label">
+                Portfólio
+              </div><h2 id="i8j5j-2" class="gjs-t-h2 gallery-title">
+                Nossos Trabalhos
+              </h2><p id="i254f-2" class="gallery-subtitle">
+                Um recorte visual de peças, acabamentos e projetos personalizados com a assinatura da Puro Tronco.
+              </p></div><div id="ijk5h-2" class="gallery-grid"><div id="iz482-2" class="group gallery-card"><div id="i3jlf-2" class="gallery-image-wrapper"><img alt="656078929_18072055115218053_4713824096108202890_n.jpg" src="https://cdn.grapesjs.com/workspaces/cmv3xjwq2gkziysykf6nbz68i/assets/7a0b0952-2569-4115-8a52-2c0faa4d084f__656078929180720551152180534713824096108202890n.jpg" id="i74s3"/></div></div><div id="iws5l-2" class="group gallery-card"><div id="icqby-2" class="gallery-image-wrapper"><img alt="651334209_17965973880047784_5368135757203846435_n.jpg" src="https://cdn.grapesjs.com/workspaces/cmv3xjwq2gkziysykf6nbz68i/assets/06e6c347-a9e8-4890-973c-6860631e9627__651334209179659738800477845368135757203846435n.jpg"/></div></div><div id="i6slp-2" class="group gallery-card"><div id="insli-2" class="gallery-image-wrapper"><img alt="669673517_18119562829724167_9082925218475344766_n.jpg" src="https://cdn.grapesjs.com/workspaces/cmv3xjwq2gkziysykf6nbz68i/assets/fa6eeb49-1334-4027-ba34-cb9499c9a7ac__669673517181195628297241679082925218475344766n.jpg" id="i894s8"/></div></div><div id="id2x9m-2" class="group gallery-card"><div id="isrikb-2" class="gallery-image-wrapper"><img alt="657364624_18096381044072811_4920170170841373910_n.jpg" src="https://cdn.grapesjs.com/workspaces/cmv3xjwq2gkziysykf6nbz68i/assets/d9cfb814-50b0-48e7-a83e-ffaefc99719b__657364624180963810440728114920170170841373910n.jpg" id="i17tik"/></div></div><div id="ilx39h-2" class="group gallery-card"><div id="idli98-2" class="gallery-image-wrapper"><img alt="670816268_17935651566203669_886432683114623116_n.webp" src="https://cdn.grapesjs.com/workspaces/cmv3xjwq2gkziysykf6nbz68i/assets/7e11ff32-a563-45a0-9eab-a6986068612e__67081626817935651566203669886432683114623116n.webp" id="i2cdxq"/></div></div><div id="ixg3p9-2" class="group gallery-card"><div id="i3zpth-2" class="gallery-image-wrapper"><img alt="656436681_17991755675945425_266114159974459571_n.jpg" src="https://cdn.grapesjs.com/workspaces/cmv3xjwq2gkziysykf6nbz68i/assets/c04d03fc-114d-49ce-a867-894b321097e6__65643668117991755675945425266114159974459571n.jpg" id="irqdvh"/><img alt="656436681_17991755675945425_266114159974459571_n.jpg" src="https://cdn.grapesjs.com/workspaces/cmv3xjwq2gkziysykf6nbz68i/assets/b8f3d025-d8e9-4059-a5be-205c75107ce0__65643668117991755675945425266114159974459571n.jpg"/></div></div></div><div id="iqd1ii-2" class="gallery-footer"><a href="https://instagram.com/purotroncomarcenaria" target="_blank" id="i920mq-2" class="instagram-button"><img src="https://api.iconify.design/lucide-instagram.svg?color=%234f3d31" alt="Ícone Instagram" id="iv4vek-2" class="instagram-icon"/><span id="i077vk-2">Acompanhe nosso Instagram</span></a></div></div></section><section id="iz6jof-2" class="services-section"><div id="i26k76-2" class="services-container"><div id="i67il6-2" class="services-header"><div id="izdmuv-2" class="section-label">Serviços e Produtos</div><h2 id="i3yath-2" class="gjs-t-h2 services-title">Soluções em madeira feitas para contar a sua história</h2><p id="i31mbe-2" class="services-subtitle">Criamos peças personalizadas que unem presença artesanal, acabamento refinado e identidade própria para presentes, decoração e projetos especiais.</p></div><div id="ijlyrf-2" class="services-grid"><article id="in7o8u-2" class="gjs-t-border service-card"><div id="i4qast-2" class="service-card-head"><div id="i4sz4f-2" class="service-icon-wrap"><img src="https://api.iconify.design/lucide-shield.svg?color=%238a6546" alt="Ícone artigos campeiros" id="ilee3d-2" class="service-icon"/></div><span id="i3bb4v-2" class="service-badge">Personalizado</span></div><div id="itrho1-2" class="service-body"><h3 id="iecrps-2" class="service-title">Artigos campeiros personalizados</h3><p id="ieke18-2" class="service-text">Confecção de artigos campeiros totalmente personalizados conforme seu gosto e necessidade. Peças criadas para presentear um amigo ou familiar, servir como brinde da sua empresa ou até mesmo para você ter algo único, com sua imagem, gravação ou formato preferido.</p></div><div id="ikc31b-2" class="service-footer"><p id="iuz4fw-2" class="service-note">Ideal para quem busca <span id="ic5lwx-2" class="service-highlight">presentes marcantes</span>, identidade regional e exclusividade em cada detalhe.</p></div></article><article id="ipflk8-2" class="gjs-t-border service-card"><div id="ix545w-2" class="service-card-head"><div id="iyr8l9-2" class="service-icon-wrap"><img src="https://api.iconify.design/lucide-lamp.svg?color=%238a6546" alt="Ícone decoração" id="i61srl-2" class="service-icon"/></div><span id="ijzt4p-2" class="service-badge">Aconchego</span></div><div id="i3ib3u-2" class="service-body"><h3 id="i1un33-2" class="service-title">Artigos de decoração personalizados</h3><p id="iv5kx4-2" class="service-text">Artigos de decoração personalizados para deixar o seu cantinho muito mais aconchegante e com o toque da Puro Tronco. Desenvolvemos peças com estética rústica, elegante e afetiva para transformar ambientes com personalidade.</p></div><div id="ixyd8f-2" class="service-footer"><p id="io7b9z-2" class="service-note">Perfeito para compor <span id="i48izh-2" class="service-highlight">salas, varandas, áreas gourmet e espaços especiais</span> com calor visual e autenticidade.</p></div></article><article id="iaziad-2" class="gjs-t-border service-card"><div id="ipaiqk-2" class="service-card-head"><div id="im8zdw-2" class="service-icon-wrap"><img src="https://api.iconify.design/lucide-sofa.svg?color=%238a6546" alt="Ícone móveis" id="i04eyi-2" class="service-icon"/></div><span id="ivyc14-2" class="service-badge">Em construção</span></div><div id="imhjux-2" class="service-body"><h3 id="ik5ird-2" class="service-title">Móveis personalizados</h3><p id="ihcxfi-2" class="service-text">Móveis personalizados unindo a arte em madeira com a serralheria artística. Uma proposta pensada para entregar peças exclusivas, robustas e cheias de presença, combinando matéria-prima, desenho autoral e funcionalidade.</p></div><div id="io1etw-2" class="service-footer"><p id="iqiheh-2" class="service-note">Este serviço está <span id="ikms4g-2" class="service-highlight">em desenvolvimento</span> e em breve fará parte do portfólio da Puro Tronco.</p></div></article></div><div id="itr85h-2" class="services-cta"><a href="https://wa.me/5551981730137" target="_blank" id="iqp2kd-2" class="gjs-t-button services-button"><img src="https://api.iconify.design/lucide-message-circle.svg?color=white" alt="Ícone do WhatsApp" id="i5abfg-2" class="services-button-icon"/><span id="ifqebo-2">Solicitar atendimento</span></a></div></div></section><section id="i0oeas" class="contact-section"><div id="i1x908" class="social-section"><div id="iod77e" class="contact-header"><div id="i91nfe" class="section-label">Contato</div><h2 id="ip0mw3" class="gjs-t-h2 contact-title">Fale com a Puro Tronco</h2><p id="i724u2" class="contact-subtitle">Entre em contato para solicitar um orçamento, tirar dúvidas sobre personalizações ou agendar o atendimento do seu projeto em madeira.</p></div><div id="isxs2j" class="contact-grid"><article id="i9jhhc" class="gjs-t-border service-card contact-card"><div id="ibgrdg" class="service-card-head"><div id="ikh88u" class="service-icon-wrap"><img src="https://api.iconify.design/lucide-phone.svg?color=%238a6546" alt="Ícone telefone" id="ih8hbp" class="service-icon"/></div><span id="i3fidz" class="service-badge">Telefone</span></div><div id="i4yvia" class="service-body"><h3 id="ihdcxe-2" class="service-title">Atendimento direto</h3><p id="isl07l-2" class="contact-value"><a href="tel:+5551981730137" id="iohvll-2" target="_blank" class="contact-link">(51) 98173-0137</a></p><p id="in14z3-2" class="contact-detail">Canal ideal para falar sobre encomendas, personalizações e disponibilidade.</p></div><div id="itr85h-2-2" title=""><a href="https://wa.me/5551981730137" target="_blank" id="iqp2kd-2-2-3" class="gjs-t-button services-button"><img src="https://api.iconify.design/lucide-message-circle.svg?color=white" alt="Ícone do WhatsApp" id="i5abfg-2-2-3" class="services-button-icon"/><span id="ifqebo-2-2-3">Whatsapp</span></a></div><div id="id29jn" class="service-footer contact-divider"><p id="ihxitm" class="contact-note">Atendimento rápido para pedidos sob medida e informações comerciais.</p></div></article><article id="i6zp94" class="gjs-t-border service-card contact-card"><div id="ia4cur" class="service-card-head"><div id="iplxcf" class="service-icon-wrap"><img src="https://api.iconify.design/lucide-mail.svg?color=%238a6546" alt="Ícone e-mail" id="io1lj4" class="service-icon"/></div><span id="it2zzq" class="service-badge">E-mail</span></div><div id="isrec3" class="service-body"><h3 id="i5gtg3" class="service-title">Envie sua solicitação</h3><p id="iww6fd" class="contact-value"><a href="mailto:ola@purotronco.com.br" id="iel234" target="_blank" class="contact-link"><font dir="auto" id="iiy8bf"><font dir="auto" id="i8xa27"><font dir="auto" id="itepgz"><font dir="auto" id="i2kpeg">ola@purotronco.com.br</font></font></font></font></a></p><p id="i8cwgj" class="contact-detail">Perfeito para enviar referências, detalhes do projeto e pedidos mais completos.</p></div><div id="ink2xh" class="service-footer contact-divider"><p id="if0j7s" class="contact-note">Retorno pensado para um atendimento claro, personalizado e objetivo.</p></div></article><article id="ilus2f" class="gjs-t-border service-card contact-card"><div id="itke09" class="service-card-head"><div id="iplmsf" class="service-icon-wrap"><img src="https://api.iconify.design/lucide-map-pin.svg?color=%238a6546" alt="Ícone localização" id="imwbuk" class="service-icon"/></div><span id="iljzzo" class="service-badge">Localização</span></div><div id="ikk574" class="service-body"><h3 id="iqnn5z" class="service-title">Nossa oficina</h3><p id="if1zvp" class="contact-value"><a href="https://maps.app.goo.gl/SUmgc8RFHAkvaqEU6" id="ithjb8" target="_blank" class="contact-link"><font dir="auto" id="iyo154-2-2"><font dir="auto" id="ih4hr4-2-2"><font dir="auto" id="ish0a8-2"><font dir="auto" id="iu8m1g-2"><font dir="auto" id="iiffcj"><font dir="auto" id="ijgl0g">Telmo Silveira Dorneles, 815</font></font></font></font></font></font></a></p><p id="ickud9" class="contact-detail">Silveira Martins, Cachoeirinha, Rio Grande do Sul, Brasil
+                    <br id="iuvsol"/>CEP: 94940-250
+                  </p></div><div id="iavkmm" class="service-footer contact-divider"><p id="i30swu" class="contact-note">Atendimento local com produção artesanal e acabamento de alto padrão.</p></div></article></div></div></section></main><div id="ii2gzz" class="social-section social-container-block"><div id="iibjvq" class="contact-header"><div id="iabp64" class="section-label"><font dir="auto" id="ibd8ql"><font dir="auto" id="i1wjor">Redes sociais</font></font></div><h2 id="i6ca48" class="gjs-t-h2 contact-title"><font dir="auto" id="ixogdt"><font dir="auto" id="iocq1f"><font dir="auto" id="ihb0tb"><font dir="auto" id="ixktw6">Fique mais perto da Puro Tronco</font></font></font></font></h2><p id="itw6fi" class="contact-subtitle"><font dir="auto" id="im13kl"><font dir="auto" id="il2j9i">Siga a Puro Tronco nas redes sociais para ficar por dentro das novidades!</font></font></p></div><div id="it3vcb" class="social-group-shell"><div id="icqbd3" class="contact-grid social-links-grid"><article id="iyux1x-2" class="social-card"><a href="https://www.instagram.com/purotroncomarcenaria" target="_blank" id="it8ukk-2" class="gjs-t-link social-link"><span id="iz85by-2" class="social-icon-wrap"><img src="https://api.iconify.design/simple-icons/instagram.svg?color=%238a6546" alt="Instagram" id="ir1asi-2" class="social-icon"/></span><span id="i1zgwh-2" class="social-name">Instagram</span></a></article><article id="iclrv7-2" class="social-card"><a href="https://www.tiktok.com/@purotronco" target="_blank" id="iq3phh-2" class="gjs-t-link social-link"><span id="iycn4h-2" class="social-icon-wrap"><img src="https://api.iconify.design/simple-icons/tiktok.svg?color=%238a6546" alt="TikTok" id="ixxpjo-2" class="social-icon"/></span><span id="i9zozz-2" class="social-name">TikTok</span></a></article><article id="icgpth-2" class="social-card"><a href="https://www.youtube.com/@purotronco" target="_blank" id="ih3v6h-2" class="gjs-t-link social-link"><span id="iii49j-2" class="social-icon-wrap"><img src="https://api.iconify.design/simple-icons/youtube.svg?color=%238a6546" alt="YouTube" id="i6mu1g-2" class="social-icon"/></span><span id="i2mg06-2" class="social-name">YouTube</span></a></article><article id="iedin8-2" class="social-card"><a href="https://www.pinterest.com/purotronco" target="_blank" id="i911eg-2" class="gjs-t-link social-link"><span id="i6rewt-2" class="social-icon-wrap"><img src="https://api.iconify.design/simple-icons/pinterest.svg?color=%238a6546" alt="Pinterest" id="itga04-2" class="social-icon"/></span><span id="i93t9d-2" class="social-name">Pinterest</span></a></article><article id="iqfpra-2" class="social-card"><a href="https://www.threads.com/@purotroncomarcenaria" target="_blank" id="ii5nf4-2" class="gjs-t-link social-link"><span id="ipgy7h-2" class="social-icon-wrap"><img src="https://api.iconify.design/simple-icons/threads.svg?color=%238a6546" alt="Threads" id="iuagoq-2" class="social-icon"/></span><span id="ievf9z-2" class="social-name">Threads</span></a></article><article id="i1r0wv-2" class="social-card"><a href="https://x.com/xpurotronco" target="_blank" id="iphh35-2" class="gjs-t-link social-link"><span id="igjnay-2" class="social-icon-wrap"><img src="https://api.iconify.design/simple-icons/x.svg?color=%238a6546" alt="X" id="iyc6pp-2" class="social-icon"/></span><span id="ipsv8x-2" class="social-name">X</span></a></article><article id="i73ygi-2" class="social-card"><a href="https://www.linkedin.com/in/purotronco" target="_blank" id="imxexm-2" class="gjs-t-link social-link"><span id="i78juj-2" class="social-icon-wrap"><img src="https://api.iconify.design/simple-icons/linkedin.svg?color=%238a6546" alt="LinkedIn" id="i21ckx-2" class="social-icon"/></span><span id="i7p5gh-2" class="social-name">LinkedIn</span></a></article><article id="izo9rj-2" class="social-card"><a href="https://share.google/Zd7gHTLN2f1pIAH1A" target="_blank" id="ips22r-2" class="gjs-t-link social-link"><span id="i5q65i-2" class="social-icon-wrap"><img src="https://api.iconify.design/lucide-building-2.svg?color=%238a6546" alt="Ícone empresa" id="i2rczr-2" class="social-icon"/></span><span id="icskak-2" class="social-name">Google Empresas</span></a></article></div></div></div><footer id="contato" class="footer"><div id="i8upw5" class="footer-container"><div id="iaatwh" class="footer-top"><div id="inaa29" class="footer-brand-column"><div id="iqtb37" class="footer-brand"><img src="https://cdn.grapesjs.com/workspaces/cmv3xjwq2gkziysykf6nbz68i/assets/c8727fe5-c07c-49b9-9ac5-7c61637acd42__prancheta-10.5x.png" alt="Puro Tronco Arte em Madeira" id="i830yi"/></div><p id="ismd1n" class="footer-description">
+                Projetos em madeira com identidade rústica, execução precisa e acabamento que valoriza cada detalhe.
+              </p></div></div><div id="imipc2" class="gjs-divider"></div><label id="iz0byk"><div id="izpwwn"><span data-gs-mrk-fs="true" id="i9l9wv">© 2026 Puro Tronco. Todos os direitos reservados.</span></div></label></div><a id="iwaflt1-2" href="https://wa.me/5551981730137" target="_blank" aria-label="Falar no WhatsApp"><img src="https://api.iconify.design/lucide-message-circle.svg?color=white" alt="WhatsApp" id="ibcu9r-2"/></a></footer></div></body>
 </html>
