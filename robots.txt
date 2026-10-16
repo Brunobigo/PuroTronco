@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://purotronco.com.br/sitemap.xml

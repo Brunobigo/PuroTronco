@@ -41,6 +41,54 @@ document.addEventListener('DOMContentLoaded', function() {
 
      observer.observe(heroBtn);
    }
+   
+   // --- MOTOR DE CONSENTIMENTO LGPD E INJEÇÃO DO GA4 ---
+    const banner = document.getElementById('lgpd-banner');
+    const btnAccept = document.getElementById('lgpd-accept');
+    const btnReject = document.getElementById('lgpd-reject');
+    const consentKey = 'purotronco_cookie_consent';
+
+    function loadGoogleAnalytics() {
+        if (window.gtag) return; // Trava contra dupla execução
+        
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-B1JC26S4P5';
+        document.head.appendChild(script);
+
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-B1JC26S4P5');
+    }
+
+    function checkConsent() {
+        const consent = localStorage.getItem(consentKey);
+        if (consent === 'granted') {
+            loadGoogleAnalytics();
+        } else if (consent === null && banner) {
+            banner.classList.remove('hidden');
+            setTimeout(() => banner.classList.add('show'), 100);
+        }
+    }
+
+    if (btnAccept && btnReject && banner) {
+        btnAccept.addEventListener('click', () => {
+            localStorage.setItem(consentKey, 'granted');
+            banner.classList.remove('show');
+            setTimeout(() => banner.classList.add('hidden'), 400);
+            loadGoogleAnalytics();
+        });
+
+        btnReject.addEventListener('click', () => {
+            localStorage.setItem(consentKey, 'denied');
+            banner.classList.remove('show');
+            setTimeout(() => banner.classList.add('hidden'), 400);
+        });
+    }
+
+    checkConsent();
+
 });
 
 // Rastreamento Global de Conversões e Engajamento (GA4)
@@ -49,7 +97,7 @@ document.querySelectorAll('a').forEach(link => {
         // Valida se o script do Google Analytics foi carregado na página
         if (typeof gtag !== 'function') return;
 
-        const href = this.getAttribute('href');
+        const href = this.getAttribute('href') || ''; 
         if (!href) return;
 
         // 1. Orçamentos e Contato Direto (WhatsApp)
@@ -89,7 +137,7 @@ document.querySelectorAll('a').forEach(link => {
         }
         // 6. Demais Redes Sociais e Google Empresas
         else if (href.includes('tiktok.com') || href.includes('youtube.com') || 
-                 href.includes('pinterest.com') || href.includes('threads.net') || 
+                 href.includes('pinterest.com') || href.includes('threads.com') || 
                  href.includes('x.com') || href.includes('linkedin.com') || 
                  href.includes('share.google')) {
             
@@ -98,7 +146,7 @@ document.querySelectorAll('a').forEach(link => {
             if (href.includes('tiktok.com')) rede = 'TikTok';
             if (href.includes('youtube.com')) rede = 'YouTube';
             if (href.includes('pinterest.com')) rede = 'Pinterest';
-            if (href.includes('threads.net')) rede = 'Threads';
+            if (href.includes('threads.com')) rede = 'Threads';
             if (href.includes('x.com')) rede = 'X_Twitter';
             if (href.includes('linkedin.com')) rede = 'LinkedIn';
             if (href.includes('share.google')) rede = 'Google_Empresas';
