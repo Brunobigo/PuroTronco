@@ -1,55 +1,86 @@
 document.addEventListener('DOMContentLoaded', function() {
-   var menuToggle = document.getElementById('menu-mobile');
-   var nav = document.getElementById('navegacao-principal');
-   var navLinks = document.querySelectorAll('.nav__link');
+    const menuToggle = document.getElementById('menu-mobile');
+    const nav = document.getElementById('navegacao-principal');
+    const navLinks = document.querySelectorAll('.nav__link');
 
-   if (menuToggle && nav) {
-     menuToggle.addEventListener('click', function() {
-       nav.classList.toggle('active');
-       var expanded = nav.classList.contains('active');
-       this.setAttribute('aria-expanded', expanded);
-     });
+    // Focus Trap e Acessibilidade (WCAG)
+    if (menuToggle && nav) {
+        const focusableElements = 'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])';
+        
+        menuToggle.addEventListener('click', function() {
+            const isActive = nav.classList.toggle('active');
+            this.setAttribute('aria-expanded', isActive);
+        });
 
-     navLinks.forEach(function(link) {
-       link.addEventListener('click', function() {
-         if (nav.classList.contains('active')) {
-           nav.classList.remove('active');
-           menuToggle.setAttribute('aria-expanded', 'false');
-         }
-       });
-     });
-   }
+        navLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                if (nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
 
-   // Nova Lógica: Controle de exibição do Botão Flutuante do WhatsApp
-   const heroBtn = document.querySelector('.hero__btn');
-   const fabWhatsapp = document.getElementById('fab-whatsapp');
+        // Prende o foco estritamente no menu quando aberto (Focus Trap)
+        document.addEventListener('keydown', function(e) {
+            if (!nav.classList.contains('active')) return;
 
-   if (heroBtn && fabWhatsapp) {
-     const observer = new IntersectionObserver((entries) => {
-       // O entries[0] representa o botão do hero monitorado
-       if (!entries[0].isIntersecting) {
-         // Botão do hero saiu da área visível da tela, adiciona a classe
-         fabWhatsapp.classList.add('show');
-       } else {
-         // Botão do hero está visível, remove a classe
-         fabWhatsapp.classList.remove('show');
-       }
-     }, {
-       root: null,   // Monitora com base na viewport principal do navegador
-       threshold: 0  // Dispara a ação assim que 1px do botão sair ou entrar na tela
-     });
+            const isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+            
+            // Permite fechamento nativo com a tecla ESC
+            if (!isTabPressed) {
+                if (e.key === 'Escape') {
+                    nav.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    menuToggle.focus();
+                }
+                return;
+            }
 
-     observer.observe(heroBtn);
-   }
+            const focusableContent = nav.querySelectorAll(focusableElements);
+            const firstElement = menuToggle;
+            const lastElement = focusableContent[focusableContent.length - 1];
+
+            if (e.shiftKey) {
+                if (document.activeElement === firstElement) {
+                    lastElement.focus();
+                    e.preventDefault();
+                }
+            } else {
+                if (document.activeElement === lastElement) {
+                    firstElement.focus();
+                    e.preventDefault();
+                }
+            }
+        });
+    }
+
+    const heroBtn = document.querySelector('.hero__btn');
+    const fabWhatsapp = document.getElementById('fab-whatsapp');
+
+    if (fabWhatsapp) {
+        if (heroBtn) {
+            const observer = new IntersectionObserver((entries) => {
+                if (!entries[0].isIntersecting) {
+                    fabWhatsapp.classList.add('show');
+                } else {
+                    fabWhatsapp.classList.remove('show');
+                }
+            }, { root: null, threshold: 0 });
+            observer.observe(heroBtn);
+        } else {
+            fabWhatsapp.classList.add('show');
+        }
+    }
    
-   // --- MOTOR DE CONSENTIMENTO LGPD E INJEÇÃO DO GA4 ---
+    // --- MOTOR DE CONSENTIMENTO LGPD E INJEÇÃO DO GA4 ---
     const banner = document.getElementById('lgpd-banner');
     const btnAccept = document.getElementById('lgpd-accept');
     const btnReject = document.getElementById('lgpd-reject');
     const consentKey = 'purotronco_cookie_consent';
 
     function loadGoogleAnalytics() {
-        if (window.gtag) return; // Trava contra dupla execução
+        if (window.gtag) return;
         
         const script = document.createElement('script');
         script.async = true;
@@ -62,99 +93,87 @@ document.addEventListener('DOMContentLoaded', function() {
         gtag('config', 'G-B1JC26S4P5');
     }
 
+    // Sincronismo Exato de UI (Elimina o delay hardcoded do setTimeout)
+    function hideBanner() {
+        banner.classList.remove('show');
+        banner.addEventListener('transitionend', function handler() {
+            banner.classList.add('hidden');
+            banner.removeEventListener('transitionend', handler);
+        }, { once: true });
+    }
+
     function checkConsent() {
         const consent = localStorage.getItem(consentKey);
         if (consent === 'granted') {
             loadGoogleAnalytics();
         } else if (consent === null && banner) {
             banner.classList.remove('hidden');
-            setTimeout(() => banner.classList.add('show'), 100);
+            // requestAnimationFrame garante que o elemento está renderizado antes de aplicar a transição
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => banner.classList.add('show'));
+            });
         }
     }
 
     if (btnAccept && btnReject && banner) {
         btnAccept.addEventListener('click', () => {
             localStorage.setItem(consentKey, 'granted');
-            banner.classList.remove('show');
-            setTimeout(() => banner.classList.add('hidden'), 400);
+            hideBanner();
             loadGoogleAnalytics();
         });
 
         btnReject.addEventListener('click', () => {
             localStorage.setItem(consentKey, 'denied');
-            banner.classList.remove('show');
-            setTimeout(() => banner.classList.add('hidden'), 400);
+            hideBanner();
         });
     }
 
     checkConsent();
 
+    const btnRevogar = document.getElementById('revogar-cookies');
+    if (btnRevogar) {
+        btnRevogar.addEventListener('click', function(e) {
+            e.preventDefault();
+            localStorage.removeItem(consentKey);
+            location.reload(); 
+        });
+    }
 });
 
-// Rastreamento Global de Conversões e Engajamento (GA4)
-document.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', function() {
-        // Valida se o script do Google Analytics foi carregado na página
-        if (typeof gtag !== 'function') return;
+// Rastreamento Global de Conversões via Delegação de Eventos (Otimizado)
+const eventContainer = document.querySelector('.wrapper') || document.body;
+eventContainer.addEventListener('click', function(e) {
+    const target = e.target;
+    
+    // Filtro O(1): Evita subir o DOM (closest) se o clique foi em parágrafos, espaços ou imagens sem link
+    const isAnchor = target.tagName === 'A';
+    if (!isAnchor && target.tagName !== 'IMG' && target.tagName !== 'SPAN' && target.tagName !== 'H3') return;
 
-        const href = this.getAttribute('href') || ''; 
-        if (!href) return;
+    const link = isAnchor ? target : target.closest('a');
+    if (!link || typeof gtag !== 'function') return;
 
-        // 1. Orçamentos e Contato Direto (WhatsApp)
-        if (href.includes('wa.me')) {
-            gtag('event', 'generate_lead', {
-                'event_category': 'Contato',
-                'event_label': 'WhatsApp'
-            });
-        }
-        // 2. Contato por Ligação
-        else if (href.startsWith('tel:')) {
-            gtag('event', 'generate_lead', {
-                'event_category': 'Contato',
-                'event_label': 'Ligacao_Telefonica'
-            });
-        }
-        // 3. Contato por E-mail
-        else if (href.startsWith('mailto:')) {
-            gtag('event', 'generate_lead', {
-                'event_category': 'Contato',
-                'event_label': 'Envio_Email'
-            });
-        }
-        // 4. Intenção de Visita (Google Maps)
-        else if (href.includes('maps.app.goo.gl')) {
-            gtag('event', 'view_location', {
-                'event_category': 'Visita_Oficina',
-                'event_label': 'Google_Maps'
-            });
-        }
-        // 5. Engajamento no Instagram (Fotos da Galeria, Botão e Ícone)
-        else if (href.includes('instagram.com')) {
-            gtag('event', 'social_engagement', {
-                'event_category': 'Redes_Sociais',
-                'event_label': 'Instagram'
-            });
-        }
-        // 6. Demais Redes Sociais e Google Empresas
-        else if (href.includes('tiktok.com') || href.includes('youtube.com') || 
-                 href.includes('pinterest.com') || href.includes('threads.com') || 
-                 href.includes('x.com') || href.includes('linkedin.com') || 
-                 href.includes('share.google')) {
-            
-            // Extrai o nome da rede dinamicamente
-            let rede = 'Outros';
-            if (href.includes('tiktok.com')) rede = 'TikTok';
-            if (href.includes('youtube.com')) rede = 'YouTube';
-            if (href.includes('pinterest.com')) rede = 'Pinterest';
-            if (href.includes('threads.com')) rede = 'Threads';
-            if (href.includes('x.com')) rede = 'X_Twitter';
-            if (href.includes('linkedin.com')) rede = 'LinkedIn';
-            if (href.includes('share.google')) rede = 'Google_Empresas';
+    const href = link.getAttribute('href') || '';
+    if (!href) return;
 
-            gtag('event', 'social_engagement', {
-                'event_category': 'Redes_Sociais',
-                'event_label': rede
-            });
+    if (href.includes('wa.me')) {
+        gtag('event', 'generate_lead', { 'event_category': 'Contato', 'event_label': 'WhatsApp' });
+    } else if (href.startsWith('tel:')) {
+        gtag('event', 'generate_lead', { 'event_category': 'Contato', 'event_label': 'Ligacao_Telefonica' });
+    } else if (href.startsWith('mailto:')) {
+        gtag('event', 'generate_lead', { 'event_category': 'Contato', 'event_label': 'Envio_Email' });
+    } else if (href.includes('maps.app.goo.gl')) {
+        gtag('event', 'view_location', { 'event_category': 'Visita_Oficina', 'event_label': 'Google_Maps' });
+    } else if (href.includes('instagram.com')) {
+        gtag('event', 'social_engagement', { 'event_category': 'Redes_Sociais', 'event_label': 'Instagram' });
+    } else {
+        const redes = ['tiktok.com', 'youtube.com', 'pinterest.com', 'threads.com', 'x.com', 'linkedin.com', 'share.google'];
+        const match = redes.find(rede => href.includes(rede));
+        if (match) {
+            const labelMap = {
+                'tiktok.com': 'TikTok', 'youtube.com': 'YouTube', 'pinterest.com': 'Pinterest',
+                'threads.com': 'Threads', 'x.com': 'X_Twitter', 'linkedin.com': 'LinkedIn', 'share.google': 'Google_Empresas'
+            };
+            gtag('event', 'social_engagement', { 'event_category': 'Redes_Sociais', 'event_label': labelMap[match] });
         }
-    });
+    }
 });
