@@ -105,10 +105,6 @@
             class="cabecalho__logo-img" width="1069" height="322">
         </a>
 
-        <button id="menu-mobile" type="button" class="btn-mobile" aria-label="Abrir menu" aria-expanded="false">
-          <img src="./assets/img/svg/hamburguer-menu.svg" alt="" aria-hidden="true" width="24" height="24">
-        </button>
-
         <nav id="navegacao-principal" class="nav">
           <a href="#sobre" class="link-padrao nav__link">Sobre</a>
           <a href="#portfolio" class="link-padrao nav__link">Portfólio</a>
@@ -439,9 +435,7 @@
               </div>
               <div class="card-servico__corpo">
                 <h3 class="card-servico__titulo">Atendimento direto</h3>
-                <p class="card-contato__valor"><a href="tel:+5551981730137"
-                    aria-label="Acessar contato via ligação telefônica com a Puro Tronco" class="link-contato">(51)
-                    98173-0137</a></p>
+                <p class="card-contato__valor"><span class="texto-valor-destaque">(51) 98173-0137</span></p>
                 <p class="card-contato__detalhe">Canal ideal para falar sobre encomendas, personalizações e
                   disponibilidade.</p>
               </div>
@@ -466,10 +460,16 @@
               </div>
               <div class="card-servico__corpo">
                 <h3 class="card-servico__titulo">Envie sua solicitação</h3>
-                <p class="card-contato__valor"><a href="mailto:ola@purotronco.com.br"
-                    aria-label="Acessar contato via email com a Puro Tronco"
-                    class="link-contato">ola@purotronco.com.br</a></p>
+                <p class="card-contato__valor"><span class="texto-valor-destaque">ola@purotronco.com.br</span></p>
                 <p class="card-contato__detalhe">Contato comercial e projetos formais.</p>
+              </div>
+              <div class="card-contato__btn-wrapper">
+                <a href="mailto:ola@purotronco.com.br" aria-label="Acessar contato via email com a Puro Tronco"
+                  class="btn-secundario btn-secundario--contato">
+                  <img src="./assets/img/svg/abrir-email-puro-tronco.svg" alt="" aria-hidden="true"
+                    class="btn-secundario__icone" loading="lazy" decoding="async" width="24" height="24">
+                  <span>Enviar E-mail</span>
+                </a>
               </div>
               <div class="card-servico__rodape divisor-contato">
                 <p class="card-contato__nota">Retorno pensado para um atendimento claro, personalizado e objetivo.</p>
@@ -484,11 +484,19 @@
               </div>
               <div class="card-servico__corpo">
                 <h3 class="card-servico__titulo">Nossa marcenaria</h3>
-                <p class="card-contato__valor"><a href="https://maps.app.goo.gl/SUmgc8RFHAkvaqEU6" target="_blank"
-                    rel="noopener noreferrer" aria-label="Acessar a localização da Puro tronco no maps"
-                    class="link-contato">Telmo Silveira Dorneles, 815</a></p>
+                <p class="card-contato__valor"><span class="texto-valor-destaque">Telmo Silveira Dorneles, 815</span>
+                </p>
                 <p class="card-contato__detalhe">Silveira Martins, Cachoeirinha, Rio Grande do Sul, Brasil<br>CEP:
                   94940-250</p>
+              </div>
+              <div class="card-contato__btn-wrapper">
+                <a href="https://maps.app.goo.gl/SUmgc8RFHAkvaqEU6" target="_blank" rel="noopener noreferrer"
+                  aria-label="Acessar a localização da Puro tronco no maps"
+                  class="btn-secundario btn-secundario--contato">
+                  <img src="./assets/img/svg/abrir-maps-puro-tronco.svg" alt="" aria-hidden="true"
+                    class="btn-secundario__icone" loading="lazy" decoding="async" width="24" height="24">
+                  <span>Abrir Mapa</span>
+                </a>
               </div>
               <div class="card-servico__rodape divisor-contato">
                 <p class="card-contato__nota">Atendimento local com produção artesanal e acabamento de alto padrão.</p>
@@ -600,14 +608,38 @@
             </span>
             <span class="rodape__copyright">
               <button id="revogar-cookies" type="button"
-                style="background: none; border: none; padding: 0; text-decoration: underline; color: inherit; cursor: pointer; font: inherit;">Revogar
-                Consentimento de Cookies</button>
+                style="background: none; border: none; padding: 0; text-decoration: underline; color: inherit; cursor: pointer; font: inherit;">Alterar
+                Preferencias de Cookies</button>
             </span>
           </div>
         </div>
       </div>
     </footer>
   </div>
+  
+  <!-- Menu Mobile Inferior Estilo App -->
+  <nav class="nav-mobile">
+    <a href="#sobre" class="nav-mobile__link" aria-label="Ir para a seção Sobre">
+      <img src="./assets/img/svg/sobre-puro-tronco.svg" alt="" aria-hidden="true" class="nav-mobile__icon">
+      <span class="nav-mobile__text">Sobre</span>
+    </a>
+    <a href="#portfolio" class="nav-mobile__link" aria-label="Ir para Portfólio">
+      <img src="./assets/img/svg/portfolio-puro-tronco.svg" alt="" aria-hidden="true" class="nav-mobile__icon">
+      <span class="nav-mobile__text">Portfólio</span>
+    </a>
+    <a href="#servicos" class="nav-mobile__link" aria-label="Ir para Serviços">
+      <img src="./assets/img/svg/servicos-puro-tronco.svg" alt="" aria-hidden="true" class="nav-mobile__icon">
+      <span class="nav-mobile__text">Serviços</span>
+    </a>
+    <a href="#contato" class="nav-mobile__link" aria-label="Ir para Contato">
+      <img src="./assets/img/svg/contato-telefonico-puro-tronco.svg" alt="" aria-hidden="true" class="nav-mobile__icon">
+      <span class="nav-mobile__text">Contato</span>
+    </a>
+    <a href="#redes-sociais" class="nav-mobile__link" aria-label="Ir para Redes Sociais">
+      <img src="./assets/img/svg/redes-sociais-puro-tronco.svg" alt="" aria-hidden="true" class="nav-mobile__icon">
+      <span class="nav-mobile__text">Sociais</span>
+    </a>
+  </nav>
 
   <a id="fab-whatsapp" class="fab-whatsapp" href="https://wa.me/5551981730137" target="_blank" rel="noopener noreferrer"
     aria-label="Acessar contato via WhatsApp com a Puro Tronco">

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="none" stroke="#8a6546" stroke-width="2">
+  <!-- Bloco alto à esquerda -->
+  <rect x="3" y="3" width="7" height="9" rx="1"></rect>
+  <!-- Bloco curto à direita -->
+  <rect x="14" y="3" width="7" height="5" rx="1"></rect>
+  <!-- Bloco alto à direita -->
+  <rect x="14" y="12" width="7" height="9" rx="1"></rect>
+  <!-- Bloco curto à esquerda -->
+  <rect x="3" y="16" width="7" height="5" rx="1"></rect>
+</svg>

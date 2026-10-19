@@ -1,60 +1,51 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.getElementById('menu-mobile');
-    const nav = document.getElementById('navegacao-principal');
-    const navLinks = document.querySelectorAll('.nav__link');
+    // --- LÓGICA DO CABEÇALHO (Ocultar ao Rolar) ---
+    const header = document.querySelector('.cabecalho');
+    let lastScrollTop = 0;
 
-    // Focus Trap e Acessibilidade (WCAG)
-    if (menuToggle && nav) {
-        const focusableElements = 'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])';
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
         
-        menuToggle.addEventListener('click', function() {
-            const isActive = nav.classList.toggle('active');
-            this.setAttribute('aria-expanded', isActive);
-        });
-
-        navLinks.forEach(function(link) {
-            link.addEventListener('click', function() {
-                if (nav.classList.contains('active')) {
-                    nav.classList.remove('active');
-                    menuToggle.setAttribute('aria-expanded', 'false');
-                }
-            });
-        });
-
-        // Prende o foco estritamente no menu quando aberto (Focus Trap)
-        document.addEventListener('keydown', function(e) {
-            if (!nav.classList.contains('active')) return;
-
-            const isTabPressed = e.key === 'Tab' || e.keyCode === 9;
-            
-            // Permite fechamento nativo com a tecla ESC
-            if (!isTabPressed) {
-                if (e.key === 'Escape') {
-                    nav.classList.remove('active');
-                    menuToggle.setAttribute('aria-expanded', 'false');
-                    menuToggle.focus();
-                }
-                return;
-            }
-
-            const focusableContent = nav.querySelectorAll(focusableElements);
-            const firstElement = menuToggle;
-            const lastElement = focusableContent[focusableContent.length - 1];
-
-            if (e.shiftKey) {
-                if (document.activeElement === firstElement) {
-                    lastElement.focus();
-                    e.preventDefault();
-                }
+        // Aplica a lógica apenas em telas mobile (onde o menu inferior existe)
+        if (window.innerWidth <= 992) {
+            if (currentScroll > lastScrollTop && currentScroll > header.offsetHeight) {
+                // Rolar para Baixo: Esconde o cabeçalho
+                header.classList.add('esconder');
             } else {
-                if (document.activeElement === lastElement) {
-                    firstElement.focus();
-                    e.preventDefault();
-                }
+                // Rolar para Cima: Mostra o cabeçalho
+                header.classList.remove('esconder');
+            }
+        } else {
+            header.classList.remove('esconder');
+        }
+        
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Evita valores negativos
+    }, { passive: true });
+
+
+    // --- ESTADO ATIVO DO MENU INFERIOR MOBILE ---
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-mobile__link');
+
+    // Observer para detectar qual seção está na tela
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active');
+                    }
+                });
             }
         });
-    }
+    }, { rootMargin: '-40% 0px -60% 0px' }); // Ajuste de margem para ativar o ícone mais perto do centro da tela
 
+    sections.forEach(sec => sectionObserver.observe(sec));
+
+
+    // --- LÓGICA DO FAB WHATSAPP ---
     const heroBtn = document.querySelector('.hero__btn');
     const fabWhatsapp = document.getElementById('fab-whatsapp');
 
@@ -93,8 +84,8 @@ document.addEventListener('DOMContentLoaded', function() {
         gtag('config', 'G-B1JC26S4P5');
     }
 
-    // Sincronismo Exato de UI (Elimina o delay hardcoded do setTimeout)
     function hideBanner() {
+        if (!banner || banner.classList.contains('hidden')) return;
         banner.classList.remove('show');
         banner.addEventListener('transitionend', function handler() {
             banner.classList.add('hidden');
@@ -103,27 +94,36 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function checkConsent() {
-        const consent = localStorage.getItem(consentKey);
-        if (consent === 'granted') {
-            loadGoogleAnalytics();
-        } else if (consent === null && banner) {
-            banner.classList.remove('hidden');
-            // requestAnimationFrame garante que o elemento está renderizado antes de aplicar a transição
-            requestAnimationFrame(() => {
-                requestAnimationFrame(() => banner.classList.add('show'));
-            });
+        try {
+            let consent = localStorage.getItem(consentKey);
+            
+            if (consent === 'granted') {
+                loadGoogleAnalytics();
+            } else if (consent === null && banner) {
+                setTimeout(() => {
+                    try { consent = localStorage.getItem(consentKey); } catch(e){}
+                    if (consent === null) {
+                        banner.classList.remove('hidden');
+                        requestAnimationFrame(() => {
+                            requestAnimationFrame(() => banner.classList.add('show'));
+                        });
+                    }
+                }, 800);
+            }
+        } catch (e) {
+            console.warn('O armazenamento local foi barrado pelas políticas do navegador.');
         }
     }
 
     if (btnAccept && btnReject && banner) {
         btnAccept.addEventListener('click', () => {
-            localStorage.setItem(consentKey, 'granted');
+            try { localStorage.setItem(consentKey, 'granted'); } catch(e) {}
             hideBanner();
             loadGoogleAnalytics();
         });
 
         btnReject.addEventListener('click', () => {
-            localStorage.setItem(consentKey, 'denied');
+            try { localStorage.setItem(consentKey, 'denied'); } catch(e) {}
             hideBanner();
         });
     }
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (btnRevogar) {
         btnRevogar.addEventListener('click', function(e) {
             e.preventDefault();
-            localStorage.removeItem(consentKey);
+            try { localStorage.removeItem(consentKey); } catch(e) {}
             location.reload(); 
         });
     }

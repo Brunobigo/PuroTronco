@@ -103,20 +103,23 @@
   font-weight: 600;
   font-style: normal;
   font-display: swap;
-  
+
 }
 
 /* ==========================================================================
    2. RESET & CONFIGURAÇÕES GLOBAIS
    ========================================================================== */
-*, ::before, ::after {
+*,
+::before,
+::after {
   box-sizing: border-box;
   border-width: 0;
   border-style: solid;
   border-color: var(--cor-borda-global);
 }
 
-html, :host {
+html,
+:host {
   scroll-behavior: smooth;
   line-height: 1.5;
   text-size-adjust: 100%;
@@ -148,7 +151,8 @@ a {
   text-decoration: inherit;
 }
 
-b, strong {
+b,
+strong {
   font-weight: bolder;
 }
 
@@ -156,7 +160,8 @@ small {
   font-size: 80%;
 }
 
-sub, sup {
+sub,
+sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
@@ -177,18 +182,26 @@ table {
   border-collapse: collapse;
 }
 
-button, input, optgroup, select, textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
   font-family: inherit;
   font-size: 100%;
   margin: 0;
   padding: 0;
 }
 
-button, select {
+button,
+select {
   text-transform: none;
 }
 
-button, input:where([type='button']), input:where([type='reset']), input:where([type='submit']) {
+button,
+input:where([type='button']),
+input:where([type='reset']),
+input:where([type='submit']) {
   appearance: button;
   background-color: var(--cor-transparente);
   background-image: none;
@@ -206,7 +219,8 @@ progress {
   vertical-align: baseline;
 }
 
-::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -223,16 +237,32 @@ summary {
   display: list-item;
 }
 
-blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
   margin: 0;
 }
 
-fieldset, legend, dialog {
+fieldset,
+legend,
+dialog {
   margin: 0;
   padding: 0;
 }
 
-ol, ul, menu {
+ol,
+ul,
+menu {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -242,12 +272,14 @@ textarea {
   resize: vertical;
 }
 
-input::placeholder, textarea::placeholder {
+input::placeholder,
+textarea::placeholder {
   opacity: 1;
   color: var(--cor-placeholder);
 }
 
-button, [role="button"] {
+button,
+[role="button"] {
   cursor: pointer;
 }
 
@@ -255,11 +287,19 @@ button, [role="button"] {
   cursor: default;
 }
 
-img, svg, video, canvas, audio, iframe, embed, object {
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
   display: block;
 }
 
-img, video {
+img,
+video {
   max-width: 100%;
   height: auto;
 }
@@ -271,13 +311,22 @@ img, video {
 /* ==========================================================================
    3. TIPOGRAFIA GERAL E BASE
    ========================================================================== */
-.font-display, h1, h2, h3, h4, h5, h6 {
+.font-display,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'LT Saeada', serif, sans-serif;
   font-size: inherit;
   font-weight: inherit;
 }
 
-code, kbd, samp, pre {
+code,
+kbd,
+samp,
+pre {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 1em;
 }
@@ -331,7 +380,11 @@ section {
   scroll-margin-top: var(--header-height);
 }
 
-h2.sobre__titulo, h2.portfolio__titulo, h2.servicos__titulo, h2.contato__titulo, h2.sociais__titulo {
+h2.sobre__titulo,
+h2.portfolio__titulo,
+h2.servicos__titulo,
+h2.contato__titulo,
+h2.sociais__titulo {
   font-size: clamp(1.875rem, 4vw + 1rem, 3rem);
   line-height: 1.2;
 }
@@ -399,6 +452,21 @@ h2.sobre__titulo, h2.portfolio__titulo, h2.servicos__titulo, h2.contato__titulo,
 .nav__link:hover {
   border-color: var(--cor-borda-card-hover);
   background-color: var(--cor-nav-link-hover-bg);
+}
+
+/* --- TRANSIÇÃO PARA OCULTAR CABEÇALHO --- */
+.cabecalho {
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cabecalho.esconder {
+  transform: translateY(-100%);
+}
+
+/* --- NAV MOBILE INFERIOR --- */
+.nav-mobile {
+  display: none;
+  /* Oculto no Desktop */
 }
 
 .btn-mobile {
@@ -1031,29 +1099,22 @@ h2.sobre__titulo, h2.portfolio__titulo, h2.servicos__titulo, h2.contato__titulo,
   color: var(--cor-texto-detalhe);
 }
 
-.link-contato {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+.texto-valor-destaque {
   color: var(--cor-primaria);
-  text-decoration: none;
-  transition: color 150ms ease, opacity 150ms ease;
-}
-
-.link-contato:hover {
-  color: var(--cor-primaria-hover);
-}
-
-.link-contato:focus {
-  outline: 2px solid var(--cor-primaria-focus);
-  outline-offset: 4px;
-  border-radius: 10px;
 }
 
 .card-contato__btn-wrapper {
   margin-top: 10px;
   display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.btn-secundario--contato {
+  flex: 1 1 0%;
   justify-content: center;
+  height: 40px;
+  padding: 0 0.5rem;
 }
 
 .btn-primario--small {
@@ -1063,7 +1124,9 @@ h2.sobre__titulo, h2.portfolio__titulo, h2.servicos__titulo, h2.contato__titulo,
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  height: 40px;
+  min-height: 40px;
+  padding: 0.6rem 1.2rem;
+  text-align: center;
   background-color: var(--cor-primaria);
   color: var(--cor-branco);
   border-radius: 9999px;
@@ -1100,6 +1163,7 @@ h2.sobre__titulo, h2.portfolio__titulo, h2.servicos__titulo, h2.contato__titulo,
   margin: 0 auto;
   max-width: 80rem;
 }
+
 .sociais__cabecalho {
   display: flex;
   flex-direction: column;
@@ -1301,141 +1365,293 @@ h2.sobre__titulo, h2.portfolio__titulo, h2.servicos__titulo, h2.contato__titulo,
    8. MEDIA QUERIES (Responsividade)
    ========================================================================== */
 @media (max-width: 992px) {
-  .btn-mobile {
-    display: block;
+
+  /* Remove a exibição do menu de texto antigo e do botão */
+  .btn-mobile,
+  .nav {
+    display: none !important;
   }
+
   .cabecalho__container {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
     padding: 1.25rem 1.5rem;
+    justify-content: center;
+    /* Centraliza a logo no mobile já que não tem botão hambúrguer */
   }
-  /* Reduz a logo no tablet para liberar espaço para o botão hambúrguer */
+
+  /* Barra inferior fixa (estilo App) */
+  .nav-mobile {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--cor-fundo-header);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid var(--cor-borda-header);
+    z-index: 50;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5rem 0.5rem calc(0.5rem + env(safe-area-inset-bottom));
+    box-shadow: 0 -4px 15px var(--cor-sombra-media);
+  }
+
+  .nav-mobile__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 0.5rem;
+    color: var(--cor-texto-detalhe);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-radius: 12px;
+    width: 64px;
+    position: relative;
+  }
+
+  .nav-mobile__icon {
+    width: 24px;
+    height: 24px;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+  }
+
+  .nav-mobile__text {
+    font-size: 0.65rem;
+    font-weight: 600;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+  }
+
+  /* Estado ativo do ícone quando a seção está na tela */
+  .nav-mobile__link.active .nav-mobile__icon,
+  .nav-mobile__link.active .nav-mobile__text {
+    opacity: 1;
+    color: var(--cor-primaria);
+  }
+
+  .nav-mobile__link.active .nav-mobile__icon {
+    transform: translateY(-2px) scale(1.1);
+  }
+
+  .nav-mobile__link::after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--cor-primaria);
+    position: absolute;
+    bottom: 2px;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: all 0.3s ease;
+  }
+
+  .nav-mobile__link.active::after {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Eleva o botão flutuante do WhatsApp para não ficar embaixo do menu novo */
+  .fab-whatsapp {
+    bottom: calc(85px + env(safe-area-inset-bottom));
+  }
+
+  /* Eleva o Banner LGPD para não bater no Menu */
+  .lgpd-banner {
+    bottom: calc(75px + env(safe-area-inset-bottom));
+  }
+
+  /* Dá um respiro no fim da página para não esconder o rodapé por trás do menu */
+  .rodape {
+    padding-bottom: 75px;
+  }
+
   .cabecalho__logo-img {
     max-width: 280px;
     height: auto;
   }
-  .nav {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding-top: 1.5rem;
-    gap: 1rem;
-  }
-  .nav.active {
-    display: flex;
-  }
+
   .hero__container {
     padding: 6rem 1.5rem;
   }
+
   .hero__title {
     font-size: 3.75rem;
     line-height: 1;
   }
+
   .hero__subtitle {
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
+
   .sobre__container {
     grid-template-columns: repeat(1, minmax(0, 1fr));
     padding: 5rem 1.5rem;
   }
-  h2.sobre__titulo, h2.portfolio__titulo, h2.servicos__titulo, h2.contato__titulo {
+
+  h2.sobre__titulo,
+  h2.portfolio__titulo,
+  h2.servicos__titulo,
+  h2.contato__titulo {
     font-size: 2.25rem;
     line-height: 2.5rem;
   }
-  .sobre__img {
-    min-height: 500px;
+
+  .moldura-imagem {
+    height: 500px;
   }
-  .portfolio__container, .servicos__container, .contato__container {
+
+  .portfolio__container,
+  .servicos__container,
+  .contato__container {
     padding: 5rem 1.5rem;
   }
+
   .portfolio__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
   .rodape__container {
     padding: 3.5rem 1.5rem;
   }
-  .servicos__grid, .contato__grid {
+
+  .servicos__grid,
+  .contato__grid {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
+
   .sociais__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 480px) {
-  .hero__btn {
+
+  .hero__btn,
+  .btn-secundario {
     padding: 1rem 1.25rem;
     font-size: 0.75rem;
     letter-spacing: 0.1em;
     width: 100%;
     justify-content: center;
   }
+
+  .hero__badge {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    padding: 0.4rem 0.8rem;
+    white-space: nowrap;
+    text-align: center;
+  }
+
   .cabecalho__container {
-    /* Removido o flex-direction: column para manter a logo e o menu lado a lado */
     gap: 1rem;
     padding: 1.25rem 1rem;
   }
+
   /* Reduz ainda mais a logo no celular */
   .cabecalho__logo-img {
     max-width: 180px;
   }
+
   .nav {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
   }
+
   .hero__container {
     padding: 5rem 1rem;
   }
-  h1.hero__title, h2.sobre__titulo, h2.portfolio__titulo, h2.servicos__titulo, h2.contato__titulo {
+
+  h1.hero__title,
+  h2.sobre__titulo,
+  h2.portfolio__titulo,
+  h2.servicos__titulo,
+  h2.contato__titulo {
     font-size: 2.25rem;
     line-height: 2.5rem;
   }
-  .hero__subtitle, .portfolio__subtitulo, .servicos__subtitulo, .contato__subtitulo {
+
+  .hero__subtitle,
+  .portfolio__subtitulo,
+  .servicos__subtitulo,
+  .contato__subtitulo {
     font-size: 1rem;
     line-height: 1.5rem;
   }
+
   .hero__actions {
     flex-direction: column;
     align-items: flex-start;
   }
-  .sobre__container, .portfolio__container, .servicos__container, .contato__container {
+
+  .sobre__container,
+  .portfolio__container,
+  .servicos__container,
+  .contato__container {
     padding: 4rem 1rem;
   }
+
   .sobre__descricao {
     font-size: 1rem;
     line-height: 1.5rem;
   }
+
   .sobre__destaques {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
-  .sobre__img {
-    min-height: 360px;
+
+  /* 1. Reduz a altura foto da CNC proporcionalmente no celular */
+  .moldura-imagem {
+    height: 420px;
   }
+
+  /* 2. Devolve o cartão flutuante para dentro da foto */
   .card-flutuante {
-    position: static;
-    margin-top: 1rem;
-    max-width: 100%;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    width: calc(100% - 2rem);
+    max-width: none;
+    padding: 1rem;
+    margin-top: 0;
   }
+
   .portfolio__grid {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
+
   .sociais__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.75rem;
   }
+
   .rodape__container {
     padding: 3.5rem 1rem;
   }
+
   .card-servico {
     padding: 1.25rem;
   }
+
   .card-social__link {
     min-height: 148px;
+  }
+
+  /* 3. Empilha os botões do banner LGPD evitando que o texto quebre mal */
+  .lgpd-banner__actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .lgpd-banner__actions button {
+    width: 100%;
   }
 }
 
@@ -1492,20 +1708,31 @@ h2.sobre__titulo, h2.portfolio__titulo, h2.servicos__titulo, h2.contato__titulo,
   justify-content: flex-start;
 }
 
-.btn-primario--small span {
+.btn-primario--small span,
+.btn-secundario--small span {
   line-height: 1;
   margin-top: 3px;
   /* Compensação gravitacional da tipografia */
 }
 
 .btn-secundario--small {
+  flex: 1 1 0%;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 40px;
   padding: 0.6rem 1.2rem;
+  text-align: center;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  font-weight: 600;
   font-size: 0.8rem;
-}
-
-.btn-secundario--small {
   color: var(--cor-texto-escuro-suave);
   border: 1px solid var(--cor-btn-sec-small-borda);
+  background-color: var(--cor-transparente);
+  transition: all 150ms ease;
 }
 
 @media (min-width: 768px) {
