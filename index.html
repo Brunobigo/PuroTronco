@@ -11,20 +11,15 @@
     content="Arte rústica com precisão CNC. Fabricamos tábuas personalizadas, relógios em bolachas de madeira, peças com resina e móveis em metalon em Cachoeirinha.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://purotronco.com.br/">
-
-  <link rel="preload" href="./assets/fonts/LTSaeada-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
-
-  <!-- Preconnect para Google Analytics -->
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="preconnect" href="https://www.google-analytics.com">
-
-  <!-- A tag real do Google Analytics será injetada dinamicamente pelo seu script.js após o consentimento LGPD, 
-       mas as rotas acima preparam o navegador para quando a conexão for estabelecida. -->
-
   <link rel="icon" type="image/svg+xml" href="./assets/img/svg/favicon-puro-tronco.svg">
-  <link rel="stylesheet" href="./styles/style.css">
 
-  <script src="./scripts/script.js" defer></script>
+  <!-- O Preload agora sabe usar as versões menores no celular para não dar download duplo -->
+  <link rel="preload" as="image" href="./assets/img/webp/foto-panoramica-da-marcenaria-puro-tronco.webp" 
+        imagesrcset="./assets/img/webp/foto-panoramica-da-marcenaria-puro-tronco-800x450.webp 800w, ./assets/img/webp/foto-panoramica-da-marcenaria-puro-tronco-1330x740.webp 1330w, ./assets/img/webp/foto-panoramica-da-marcenaria-puro-tronco.webp 1920w" 
+        imagesizes="100vw">
+  
+  <link rel="preload" href="./assets/fonts/LTSaeada-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./styles/style.css" as="style">  
 
   <script type="application/ld+json">
       {
@@ -93,6 +88,10 @@
     content="Arte rústica com precisão CNC. Fabricamos tábuas personalizadas, relógios em bolachas de madeira, peças com resina e móveis em metalon em Cachoeirinha.">
   <meta name="twitter:image" content="https://purotronco.com.br/assets/img/png/logo-puro-tronco-sociais.png">
 
+  <script src="./scripts/script.js" defer></script>
+  
+  <link rel="stylesheet" href="./styles/style.css">
+
 </head>
 
 <body class="corpo-pagina">
@@ -119,8 +118,11 @@
       <!-- Hero Section -->
       <section class="hero">
         <div class="hero__bg-texture">
-          <img src="./assets/img/webp/foto-panoramica-da-marcenaria-puro-tronco.webp" alt="" aria-hidden="true"
-            class="hero__bg-img" fetchpriority="high" width="683" height="384">
+          <img src="./assets/img/webp/foto-panoramica-da-marcenaria-puro-tronco.webp" 
+               srcset="./assets/img/webp/foto-panoramica-da-marcenaria-puro-tronco-800x450.webp 800w, ./assets/img/webp/foto-panoramica-da-marcenaria-puro-tronco-1330x740.webp 1330w"
+               sizes="100vw"
+               alt="" aria-hidden="true"
+               class="hero__bg-img" fetchpriority="high" width="683" height="384">
         </div>
         <div class="hero__overlay"></div>
         <div class="hero__container">
@@ -134,7 +136,7 @@
                 <img src="./assets/img/svg/meta-whatsapp-puro-tronco.svg" alt="" aria-hidden="true"
                   class="btn-primario__icone" width="24" height="24">
                 <span>Faça um Orçamento no WhatsApp</span>
-              </a>
+              </a>""
             </div>
           </div>
         </div>
@@ -179,8 +181,11 @@
           </div>
           <div class="sobre__imagem-col">
             <div class="borda-destaque moldura-imagem">
-              <img src="./assets/img/webp/mesa-de-cnc-router.webp" alt="Mesa de usinagem router CNC da puro tronco"
-                class="sobre__img" decoding="async" width="1536" height="2736">
+              <img src="./assets/img/webp/mesa-de-cnc-router.webp"
+                   srcset="./assets/img/webp/mesa-de-cnc-router-360x400.webp 360w, ./assets/img/webp/mesa-de-cnc-router-688x744.webp 688w, ./assets/img/webp/mesa-de-cnc-router-1080x1200.webp 1080w"
+                   sizes="(max-width: 480px) 100vw, (max-width: 992px) 50vw, 33vw"
+                   alt="Mesa de usinagem router CNC da puro tronco"
+                   class="sobre__img" loading="lazy" decoding="async" width="1536" height="2736">
             </div>
             <div class="card-flutuante">
               <div class="card-flutuante__cabecalho">
@@ -607,17 +612,22 @@
               </a>
             </span>
             <span class="rodape__copyright">
-              <button id="revogar-cookies" type="button"
-                style="background: none; border: none; padding: 0; text-decoration: underline; color: inherit; cursor: pointer; font: inherit;">Alterar
-                Preferencias de Cookies</button>
+              <span id="revogar-cookies" role="button" tabindex="0"
+                style="text-decoration: underline; color: inherit; cursor: pointer;">Revogar Consentimento de
+                Cookies</span>
             </span>
           </div>
         </div>
       </div>
+      <a id="fab-whatsapp" class="fab-whatsapp" href="https://wa.me/5551981730137" target="_blank"
+        rel="noopener noreferrer" aria-label="Acessar contato via WhatsApp com a Puro Tronco">
+        <img src="./assets/img/svg/meta-whatsapp-puro-tronco.svg" alt="" aria-hidden="true" class="fab-whatsapp__icon"
+          loading="lazy" decoding="async" width="24" height="24">
+      </a>
     </footer>
   </div>
-  
-  <!-- Menu Mobile Inferior Estilo App -->
+
+  <!-- Menu Mobile Inferior -->
   <nav class="nav-mobile">
     <a href="#sobre" class="nav-mobile__link" aria-label="Ir para a seção Sobre">
       <img src="./assets/img/svg/sobre-puro-tronco.svg" alt="" aria-hidden="true" class="nav-mobile__icon">
@@ -640,12 +650,6 @@
       <span class="nav-mobile__text">Sociais</span>
     </a>
   </nav>
-
-  <a id="fab-whatsapp" class="fab-whatsapp" href="https://wa.me/5551981730137" target="_blank" rel="noopener noreferrer"
-    aria-label="Acessar contato via WhatsApp com a Puro Tronco">
-    <img src="./assets/img/svg/meta-whatsapp-puro-tronco.svg" alt="" aria-hidden="true" class="fab-whatsapp__icon"
-      loading="lazy" decoding="async" width="24" height="24">
-  </a>
 
   <!-- Banner LGPD e Cookies -->
   <div id="lgpd-banner" class="lgpd-banner hidden">
