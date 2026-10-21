@@ -53,14 +53,12 @@
   --cor-primaria-hover-border: rgb(132 176 141 / 1);
 
   /* Botões Secundários */
-  --cor-tag-bg: rgb(245 235 223 / 1);
-  --cor-tag-texto: rgb(92 65 43 / 1);
-  --cor-tag-borda: rgb(168 135 101 / 1);
-  --cor-tag-borda-alt: rgb(160 125 90 / 1);
-  --cor-tag-borda-translucida: rgb(150 110 65 / 0.45);
-  --cor-badge-bg: rgb(243 236 225 / 0.1);
-  --cor-badge-texto: rgb(228 201 168 / 1);
-  --cor-badge-borda: rgb(168 135 101 / 1);
+  --cor-btn-sec-texto: rgb(79 61 49 / 1);
+  --cor-btn-sec-borda: rgb(183 150 115 / 1);
+  --cor-btn-sec-hover-bg: rgb(248 239 228 / 1);
+  --cor-btn-sec-hover-borda: rgb(138 106 79 / 1);
+  --cor-btn-sec-focus: rgb(216 192 164 / 1);
+  --cor-btn-sec-small-borda: rgb(217 199 178 / 0.5);
 
   /* Tags e Badges */
   --cor-tag-bg: rgb(245 235 223 / 1);

@@ -16,7 +16,7 @@
   <!-- O Preload agora sabe usar as versões menores no celular para não dar download duplo -->
   <link rel="preload" as="image" href="./assets/img/webp/foto-panoramica-da-marcenaria-puro-tronco-1330x740.webp" 
         imagesrcset="./assets/img/webp/foto-panoramica-da-marcenaria-puro-tronco-800x450.webp 800w, ./assets/img/webp/foto-panoramica-da-marcenaria-puro-tronco-1330x740.webp 1330w" 
-        imagesizes="100vw"
+        imagessizes="(max-width: 480px) calc(100vw - 32px), (max-width: 992px) calc(100vw - 48px), 600px
         fetchpriority=high>
   
   <link rel="preload" href="./assets/fonts/LTSaeada-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
@@ -184,7 +184,7 @@
             <div class="borda-destaque moldura-imagem">
               <img src="./assets/img/webp/mesa-de-cnc-router.webp"
                    srcset="./assets/img/webp/mesa-de-cnc-router-360x400.webp 360w, ./assets/img/webp/mesa-de-cnc-router-688x744.webp 688w, ./assets/img/webp/mesa-de-cnc-router-1080x1200.webp 1080w"
-                   sizes="(max-width: 480px) 100vw, (max-width: 992px) 50vw, 33vw"
+                   sizes="(max-width: 480px) calc(100vw - 32px), (max-width: 992px) calc(100vw - 48px), 600px"
                    alt="Mesa de usinagem router CNC da puro tronco"
                    class="sobre__img" loading="lazy" decoding="async" width="1536" height="2736">
             </div>
@@ -220,7 +220,7 @@
                   <img alt="Logo da Puro Tronco entalhada em bolacha de tronco de árvore"
                     src="./assets/img/webp/puro-tronco-bolacha-tronco-1200x1200.webp"
                     srcset="./assets/img/webp/puro-tronco-bolacha-tronco-400x400.webp 400w, ./assets/img/webp/puro-tronco-bolacha-tronco-800x800.webp 800w, ./assets/img/webp/puro-tronco-bolacha-tronco-1200x1200.webp 1200w"
-                    sizes="(max-width: 480px) 100vw, (max-width: 992px) 50vw, 33vw" class="card-portfolio__img"
+                    sizes="(max-width: 480px) calc(100vw - 32px), (max-width: 992px) calc(50vw - 36px), 400px" class="card-portfolio__img"
                     loading="lazy" decoding="async" width="400" height="400">
                 </div>
               </a>
@@ -233,7 +233,7 @@
                   <img alt="Peças personalizadas do Harry Potter entalhadas em madeira"
                     src="./assets/img/webp/pecas-harry-potter-madeira-1200x1200.webp"
                     srcset="./assets/img/webp/pecas-harry-potter-madeira-400x400.webp 400w, ./assets/img/webp/pecas-harry-potter-madeira-800x800.webp 800w, ./assets/img/webp/pecas-harry-potter-madeira-1200x1200.webp 1200w"
-                    sizes="(max-width: 480px) 100vw, (max-width: 992px) 50vw, 33vw" class="card-portfolio__img"
+                    sizes="(max-width: 480px) calc(100vw - 32px), (max-width: 992px) calc(50vw - 36px), 400px" class="card-portfolio__img"
                     loading="lazy" decoding="async" width="400" height="400">
                 </div>
               </a>
@@ -246,7 +246,7 @@
                   <img alt="Diversas tábuas de corte artesanais em marchetaria"
                     src="./assets/img/webp/diversas-tabuas-puro-tronco-1200x1200.webp"
                     srcset="./assets/img/webp/diversas-tabuas-puro-tronco-400x400.webp 400w, ./assets/img/webp/diversas-tabuas-puro-tronco-800x800.webp 800w, ./assets/img/webp/diversas-tabuas-puro-tronco-1200x1200.webp 1200w"
-                    sizes="(max-width: 480px) 100vw, (max-width: 992px) 50vw, 33vw" class="card-portfolio__img"
+                    sizes="(max-width: 480px) calc(100vw - 32px), (max-width: 992px) calc(50vw - 36px), 400px" class="card-portfolio__img"
                     loading="lazy" decoding="async" width="400" height="400">
                 </div>
               </a>
@@ -259,7 +259,7 @@
                   <img alt="Tábua de corte da Hello Kitty fabricada em madeira Angelim"
                     src="./assets/img/webp/tabua-de-corte-da-hello-kitty-em-angelim-1200x1200.webp"
                     srcset="./assets/img/webp/tabua-de-corte-da-hello-kitty-em-angelim-400x400.webp 400w, ./assets/img/webp/tabua-de-corte-da-hello-kitty-em-angelim-800x800.webp 800w, ./assets/img/webp/tabua-de-corte-da-hello-kitty-em-angelim-1200x1200.webp 1200w"
-                    sizes="(max-width: 480px) 100vw, (max-width: 992px) 50vw, 33vw" class="card-portfolio__img"
+                    sizes="(max-width: 480px) calc(100vw - 32px), (max-width: 992px) calc(50vw - 36px), 400px" class="card-portfolio__img"
                     loading="lazy" decoding="async" width="400" height="400">
                 </div>
               </a>
@@ -272,7 +272,7 @@
                   <img alt="Tábua de churrasco do Grêmio fabricada em madeira Grápia"
                     src="./assets/img/webp/tabua-de-corte-do-gremio-em-grapia-1200x1200.webp"
                     srcset="./assets/img/webp/tabua-de-corte-do-gremio-em-grapia-400x400.webp 400w, ./assets/img/webp/tabua-de-corte-do-gremio-em-grapia-800x800.webp 800w, ./assets/img/webp/tabua-de-corte-do-gremio-em-grapia-1200x1200.webp 1200w"
-                    sizes="(max-width: 480px) 100vw, (max-width: 992px) 50vw, 33vw" class="card-portfolio__img"
+                    sizes="(max-width: 480px) calc(100vw - 32px), (max-width: 992px) calc(50vw - 36px), 400px" class="card-portfolio__img"
                     loading="lazy" decoding="async" width="400" height="400">
                 </div>
               </a>
@@ -285,7 +285,7 @@
                   <img alt="Tábua de churrasco com desenho de touro fabricada em madeira Ipê"
                     src="./assets/img/webp/tabua-de-corte-em-ipe-touro-1200x1200.webp"
                     srcset="./assets/img/webp/tabua-de-corte-em-ipe-touro-400x400.webp 400w, ./assets/img/webp/tabua-de-corte-em-ipe-touro-800x800.webp 800w, ./assets/img/webp/tabua-de-corte-em-ipe-touro-1200x1200.webp 1200w"
-                    sizes="(max-width: 480px) 100vw, (max-width: 992px) 50vw, 33vw" class="card-portfolio__img"
+                    sizes="(max-width: 480px) calc(100vw - 32px), (max-width: 992px) calc(50vw - 36px), 400px" class="card-portfolio__img"
                     loading="lazy" decoding="async" width="400" height="400">
                 </div>
               </a>
@@ -298,7 +298,7 @@
                   <img alt="Petisqueira em bolacha de madeira Ipê decorada com conchas e resina epóxi"
                     src="./assets/img/webp/petisqueira-em-ipe-com-conchas-resinadas-1200x1200.webp"
                     srcset="./assets/img/webp/petisqueira-em-ipe-com-conchas-resinadas-400x400.webp 400w, ./assets/img/webp/petisqueira-em-ipe-com-conchas-resinadas-800x800.webp 800w, ./assets/img/webp/petisqueira-em-ipe-com-conchas-resinadas-1200x1200.webp 1200w"
-                    sizes="(max-width: 480px) 100vw, (max-width: 992px) 50vw, 33vw" class="card-portfolio__img"
+                    sizes="(max-width: 480px) calc(100vw - 32px), (max-width: 992px) calc(50vw - 36px), 400px" class="card-portfolio__img"
                     loading="lazy" decoding="async" width="400" height="400">
                 </div>
               </a>
@@ -311,7 +311,7 @@
                   <img alt="Tabuleiro de xadrez artesanal em marchetaria com madeiras Grápia e Angelim"
                     src="./assets/img/webp/marchetaria-tabuleiro-xadrez-grapia-e-angelim-1200x1200.webp"
                     srcset="./assets/img/webp/marchetaria-tabuleiro-xadrez-grapia-e-angelim-400x400.webp 400w, ./assets/img/webp/marchetaria-tabuleiro-xadrez-grapia-e-angelim-800x800.webp 800w, ./assets/img/webp/marchetaria-tabuleiro-xadrez-grapia-e-angelim-1200x1200.webp 1200w"
-                    sizes="(max-width: 480px) 100vw, (max-width: 992px) 50vw, 33vw" class="card-portfolio__img"
+                    sizes="(max-width: 480px) calc(100vw - 32px), (max-width: 992px) calc(50vw - 36px), 400px" class="card-portfolio__img"
                     loading="lazy" decoding="async" width="400" height="400">
                 </div>
               </a>
@@ -324,7 +324,7 @@
                   <img alt="Tábua de churrasco em formato de violão fabricada em madeira Grápia"
                     src="./assets/img/webp/tabua-de-corte-grapia-em-formato-de-violao-1200x1200.webp"
                     srcset="./assets/img/webp/tabua-de-corte-grapia-em-formato-de-violao-400x400.webp 400w, ./assets/img/webp/tabua-de-corte-grapia-em-formato-de-violao-800x800.webp 800w, ./assets/img/webp/tabua-de-corte-grapia-em-formato-de-violao-1200x1200.webp 1200w"
-                    sizes="(max-width: 480px) 100vw, (max-width: 992px) 50vw, 33vw" class="card-portfolio__img"
+                    sizes="(max-width: 480px) calc(100vw - 32px), (max-width: 992px) calc(50vw - 36px), 400px" class="card-portfolio__img"
                     loading="lazy" decoding="async" width="400" height="400">
                 </div>
               </a>
