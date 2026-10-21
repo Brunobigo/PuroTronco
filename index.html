@@ -16,7 +16,8 @@
   <!-- O Preload agora sabe usar as versões menores no celular para não dar download duplo -->
   <link rel="preload" as="image" href="./assets/img/webp/foto-panoramica-da-marcenaria-puro-tronco-1330x740.webp" 
         imagesrcset="./assets/img/webp/foto-panoramica-da-marcenaria-puro-tronco-800x450.webp 800w, ./assets/img/webp/foto-panoramica-da-marcenaria-puro-tronco-1330x740.webp 1330w" 
-        imagesizes="100vw">
+        imagesizes="100vw"
+        fetchpriority=high>
   
   <link rel="preload" href="./assets/fonts/LTSaeada-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="./styles/style.css" as="style">  
@@ -122,7 +123,7 @@
                srcset="./assets/img/webp/foto-panoramica-da-marcenaria-puro-tronco-800x450.webp 800w, ./assets/img/webp/foto-panoramica-da-marcenaria-puro-tronco-1330x740.webp 1330w"
                sizes="100vw"
                alt="" aria-hidden="true"
-               class="hero__bg-img" fetchpriority="high" width="683" height="384">
+               class="hero__bg-img" width="683" height="384">
         </div>
         <div class="hero__overlay"></div>
         <div class="hero__container">
