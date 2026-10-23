@@ -70,18 +70,30 @@ document.addEventListener('DOMContentLoaded', function() {
     const btnReject = document.getElementById('lgpd-reject');
     const consentKey = 'purotronco_cookie_consent';
 
-    function loadGoogleAnalytics() {
-        if (window.gtag) return;
-        
-        const script = document.createElement('script');
-        script.async = true;
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-B1JC26S4P5';
-        document.head.appendChild(script);
+    function loadTrackers() {
+        // 1. Google Analytics
+        if (!window.gtag) {
+            const scriptGA = document.createElement('script');
+            scriptGA.async = true;
+            scriptGA.src = 'https://www.googletagmanager.com/gtag/js?id=G-B1JC26S4P5';
+            document.head.appendChild(scriptGA);
 
-        window.dataLayer = window.dataLayer || [];
-        window.gtag = function(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-B1JC26S4P5');
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = function(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-B1JC26S4P5');
+        }
+
+        // 2. Metricool Tracker
+        if (!window.beTracker) {
+            const scriptMC = document.createElement("script");
+            scriptMC.type = "text/javascript";
+            scriptMC.src = "https://tracker.metricool.com/resources/be.js";
+            scriptMC.onload = function() {
+                beTracker.t({hash:"928b965e266ba1c26baa6f173c6ea195"});
+            };
+            document.head.appendChild(scriptMC);
+        }
     }
 
     function hideBanner() {
@@ -119,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
         btnAccept.addEventListener('click', () => {
             try { localStorage.setItem(consentKey, 'granted'); } catch(e) {}
             hideBanner();
-            loadGoogleAnalytics();
+            loadTrackers();
         });
 
         btnReject.addEventListener('click', () => {
@@ -138,6 +150,28 @@ document.addEventListener('DOMContentLoaded', function() {
             location.reload(); 
         });
     }
+
+    // --- CHAMA ATENÇÃO NA ABA DO NAVEGADOR (PISCANTE) ---
+    const tituloOriginal = document.title;
+    const mensagens = ["🔨 Volte aqui!", "🪓 Seu projeto te espera!"];
+    let indexMensagem = 0;
+    let temporizadorAba = null;
+
+    document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+            // Inicia o pisca-pisca a cada 1.5s (1500 milissegundos)
+            temporizadorAba = setInterval(() => {
+                document.title = mensagens[indexMensagem];
+                indexMensagem = (indexMensagem + 1) % mensagens.length;
+            }, 1500);
+        } else {
+            // Usuário voltou: para o temporizador e zera o título
+            clearInterval(temporizadorAba);
+            document.title = tituloOriginal;
+            indexMensagem = 0;
+        }
+    });
+    
 });
 
 // Rastreamento Global de Conversões via Delegação de Eventos (Otimizado)
